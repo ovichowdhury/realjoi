@@ -47,5 +47,13 @@
   },
   "dependencies": {
     "prop-types": "^15.8.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ovichowdhury/realjoi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ovichowdhury/realjoi/issues"
+  },
+  "homepage": "https://github.com/ovichowdhury/realjoi"
 }

@@ -1,5 +1,13 @@
+import { useFormValidation, useFormValidationAsync } from './hooks/useFormValidation';
+import { useValidation } from './hooks/useValidation';
 
 
-export { useFormValidation } from './hooks/useFormValidation';
-export { useValidation } from './hooks/useValidation';
+
+export default {
+    useFormValidation,
+    useFormValidationAsync,
+    useValidation
+};
+
+
 

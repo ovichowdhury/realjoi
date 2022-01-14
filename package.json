@@ -1,5 +1,5 @@
 {
-  "name": "@nahidchowdhury/realjoi",
+  "name": "realjoi",
   "version": "1.0.0",
   "description": "Realtime validation hooks for joi validation.",
   "main": "dist/index.js",
@@ -46,6 +46,7 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
+    "joi": "^17.5.0",
     "prop-types": "^15.8.1"
   },
   "repository": {

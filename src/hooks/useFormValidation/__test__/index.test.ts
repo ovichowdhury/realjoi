@@ -55,7 +55,7 @@ describe('useFormValidationAsync test', () => {
             }
         });
 
-        rerender({ schema, state: { name: 'abcd', email: 'abcd@gmail.com' } })
+        rerender({ schema, state: { name: 'abc', email: 'abcd@gmail.com' } })
 
         await waitForNextUpdate();
 

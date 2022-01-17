@@ -59,7 +59,16 @@ describe('useFormValidationAsync test', () => {
 
         await waitForNextUpdate();
 
-        console.log(result.current.errors);
+        // console.log(result.current.errors);
         expect(result.current.ok).toEqual(true);
+        expect(result.current.errors['name']).toEqual(undefined);
+        expect(result.current.errors['email']).toEqual(undefined);
+
+        rerender({ schema, state: { name: "", email: 'abc@gmail.com' } })
+
+        await waitForNextUpdate();
+
+        expect(result.current.ok).toEqual(false);
+        expect(result.current.errors['name']).toBeTruthy();
     })
 })

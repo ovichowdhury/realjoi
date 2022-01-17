@@ -1,4 +1,4 @@
-import Joi, { ValidationError, ValidationErrorItem } from 'joi';
+import Joi, { ValidationErrorItem } from 'joi';
 import { useEffect, useRef, useState } from 'react';
 
 
@@ -75,16 +75,16 @@ export function useFormValidationAsync(schema: Joi.Schema, state: Object, option
             setOk(true);
           }
           catch (error: any) {
-            if (error instanceof ValidationError) {
+            if (error instanceof Joi.ValidationError) {
               setOk(false);
               error?.details.forEach((d: ValidationErrorItem) => {
                 if (d.context?.key) errors[d.context.key] = d.message;
               })
-              setErrors({ ...errors });
             }
             else console.error(error);
-
           }
+
+          setErrors({ ...errors });
 
         }
       )();

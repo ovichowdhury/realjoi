@@ -3,7 +3,7 @@ import { useValidation } from './hooks/useValidation';
 
 
 
-export default {
+export {
     useFormValidation,
     useFormValidationAsync,
     useValidation

@@ -1,6 +1,6 @@
 import Joi, { ValidationErrorItem } from 'joi';
 import { useEffect, useRef, useState } from 'react';
-
+import PropTypes from 'prop-types';
 
 // init errors obejct for equvalent keys from state
 function initErrors(state: Object): Object {
@@ -99,3 +99,16 @@ export function useFormValidationAsync(schema: Joi.Schema, state: Object, option
 
 }
 
+
+useFormValidation.propTypes = {
+  schema: PropTypes.object.isRequired,
+  state: PropTypes.object.isRequired,
+  options: PropTypes.object.isRequired
+}
+
+
+useFormValidationAsync.propTypes = {
+  schema: PropTypes.object.isRequired,
+  state: PropTypes.object.isRequired,
+  options: PropTypes.object.isRequired
+}

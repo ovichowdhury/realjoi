@@ -1,6 +1,6 @@
 {
   "name": "@nahidchowdhury/realjoi",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Realtime validation hooks for joi validation.",
   "main": "dist/index.js",
   "scripts": {

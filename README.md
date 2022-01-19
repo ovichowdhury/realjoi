@@ -58,9 +58,7 @@ import { useState } from 'react'
 import Joi from 'joi';
 import { useFormValidationAsync, useFormValidation } from '@nahidchowdhury/realjoi';
 
-
-function Test() {
-  
+function Test() { 
   // define state for form
   const [formState, setFormState] = useState({
     name: '',
@@ -87,49 +85,46 @@ function Test() {
   });
 
   const handleSubmit = (e) => {
-    console.log(formState);
+    e.preventDefault();
+    if(ok) {
+      // proceed forward if ok is true
+      console.log(formState);
+    }
   }
 
   const onFormChange = (e) => {
-    formState[e.target.name] = e.target.value;
-    setFormState({ ...formState });
+    setFormState({ ...formState, [e.target.name]: e.target.value });
   }
-
 
   return (
     <>
       <div>
-        <form >
+        <form onChange={onFormChange} onSubmit={handleSubmit}>
           <div >
             <label>Name</label>
-            <input type="text" onChange={onFormChange} name="name"></input>
+            <input type="text" name="name"></input>
             <label style={{ color: "red" }}>{errors['name']}</label>
           </div>
           <div>
             <label>Email</label>
-            <input type="text" onChange={onFormChange} name="email"></input>
+            <input type="text" name="email"></input>
             <label style={{ color: "red" }}>{errors['email']}</label>
           </div>
           <div>
             <label>Mobile</label>
-            <input type="text" onChange={onFormChange} name="mobile"></input>
+            <input type="text" name="mobile"></input>
             <label style={{ color: "red" }}>{errors['mobile']}</label>
           </div>
           <div>
-            <button type="button" onClick={handleSubmit}>Submit</button>
+            <button type="submit">Submit</button>
           </div>
-
         </form>
-
       </div>
-
     </>
   );
 }
 
 export default Test;
-
-  
 ```
 
 ## Stay in touch
